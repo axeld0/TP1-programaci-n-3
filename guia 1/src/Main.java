@@ -24,7 +24,15 @@ public class Main
 
         //sumarNumerosPositivos(); /*ejercicio 8*/
 
-        calcularBisiesto(); /*ejercicio  8*/
+        //calcularBisiesto(); /*ejercicio  8*/
+        
+         //calcularBisiesto(); /*ejercicio  9*/
+        // encontrarValorAscii(); /*ejercicio 10*/
+        //multiplicarNumeros(); /*ejercicio 11*/
+        //calculoArea(); /*ejercicio 12*/
+        //buenosDiasNombreIntroducido(); /*ejercicio 13*/
+        //dobleYTriple(); /*ejercicio 14*/
+        //centigradosAFahrenheit(); /*ejercicio 15*/
 
         teclado.close();
     }
@@ -198,6 +206,104 @@ public class Main
             System.out.println("el anio no es bisiesto");
         }
     }
+    
+    /*Ejercicio nº10: Encontrar el valor ASCII de un carácter.
+*/
+    public static void encontrarValorAscii ()
+    {
+        String continuar = new String();
+        do {
+            System.out.println("Ingrese un numero de 0 a 255");
+            int valorABuscar = teclado.nextInt();
+            if (valorABuscar < 0 || valorABuscar > 255) {
+                System.out.println("El valor ingresado no corresponde a un caracter ASCII");
+            } else {
+                System.out.println("El valor ingresado: "+valorABuscar + " , equivale a "+ (char)valorABuscar );
+            }
+            System.out.println("Desea ingresar otro valor? (s/n)");
+            continuar = teclado.next();
+        }while (continuar.equals ("S") || continuar.equals ("s"));
+    }
+
+    /*Ejercicio nº11: Multiplicar dos números.*/
+     public static void multiplicarNumeros ()
+    {
+        System.out.println("Ingrese un numero");
+        int primerValor = teclado.nextInt();
+        System.out.println("ingrese un segundo valor");
+        int segundoValor = teclado.nextInt();
+        System.out.println("La multiplicacion de "+ primerValor + " y " + segundoValor + "es : "+ (primerValor*segundoValor));
+    }
+    
+    
+      /*Ejercicio nº11: Multiplicar dos números.*/
+public static void calculoArea ()
+    {
+        System.out.println("Bienvenido al sistema de calculo de area");
+        System.out.println("Ingrese el tipo de figura cuyo area desea calcular");
+        int opcion;
+        do {
+            System.out.println("1)rectangulo");
+            System.out.println("2)cuadrado");
+            System.out.println("3)triangulo");
+            System.out.println("4)circulo");
+            opcion = teclado.nextInt();
+               switch (opcion) {
+                   case 1:
+                       System.out.println("Ingrese el valor de la base");
+                       int base = teclado.nextInt();
+                       System.out.println("Ingrese la altura");
+                       int altura = teclado.nextInt();
+                       System.out.println("El area del rectangulo de base " + base + " y " + altura + " de altura es " + (base * altura));
+                       break;
+                   case 2:
+                       System.out.println("Ingrese el valor del lado");
+                       int lado = teclado.nextInt();
+                       System.out.println("El area del cuadrado de lado " + lado + " es " + (Math.pow(lado, 2)));
+                       break;
+                   case 3:
+                       System.out.println("ingrese el valor de la base");
+                       int baseTriangulo = teclado.nextInt();
+                       System.out.println("Ingrese la altura del triangulo");
+                       int alturaTriangulo = teclado.nextInt();
+                       System.out.println("El area del triangulo de base " + baseTriangulo + " y de altura " + alturaTriangulo + "es :" + ((float)(baseTriangulo * alturaTriangulo) / 2));
+                       break;
+                   case 4:
+                       System.out.println("Ingrese el radio del circulo");
+                       int radio = teclado.nextInt();
+                       System.out.println("el area del circulo ingresado de radio " + radio + "es de : " + Math.PI * Math.pow(radio, 2));
+                       break;
+
+               }
+
+
+            }while (opcion >= 1 || opcion <= 4);
+    } 
+    
+    
+     /*Ejercicio nº13: Programa que lea un nombre y muestre por pantalla:
+“Buenos dias nombre_introducido”.*/
+    
+    public static void buenosDiasNombreIntroducido ()
+    {
+        String nombre = new String();
+        System.out.println("Ingrese su nombre");
+        nombre = teclado.nextLine();
+        System.out.println("Buenos dias, " +nombre );
+
+    }
+    
+    /*Ejercicio nº15: Programa que lea una cantidad de grados centígrados y
+  la pase a grados Fahrenheit.
+   La fórmula correspondiente para pasar de grados centígrados a fahrenheit es:  F = 32 + ( 9 * C / 5)
+*/
+    public static void centigradosAFahrenheit()
+    {
+        System.out.println("Ingrese una cantidad de grados celcius C");
+        int celsius = teclado.nextInt();
+        System.out.println("Celsius : " +celsius + " C, equivale a "+ (float)(32 +((9 * (float)celsius)/5)));
+    }
+
 
 }
 
