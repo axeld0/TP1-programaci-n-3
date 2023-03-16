@@ -33,7 +33,8 @@ public class Main
         //buenosDiasNombreIntroducido(); /*ejercicio 13*/
         //dobleYTriple(); /*ejercicio 14*/
         //centigradosAFahrenheit(); /*ejercicio 15*/
-
+        //longitudYArea(); /*ejercicio 16*/
+        
         teclado.close();
     }
 
@@ -303,6 +304,19 @@ public static void calculoArea ()
         int celsius = teclado.nextInt();
         System.out.println("Celsius : " +celsius + " C, equivale a "+ (float)(32 +((9 * (float)celsius)/5)));
     }
+    
+    
+   /*Ejercicio nº16: Programa que lea por teclado el valor del radio de una circunferencia y calcula y muestra por pantalla la longitud y el área de la circunferencia. Investigar el uso de la librería Math.
+Longitud de la circunferencia = 2*PI*Radio, Area de la circunferencia = PI*Radio^2
+
+     */
+public static void longitudYArea()
+{
+    System.out.println("Ingrese el radio de la circunferencia");
+    float radio = teclado.nextFloat();
+    System.out.println("La longitud es de "+ 2*(Math.PI)*radio+ " y el area es de "+ Math.PI* Math.pow(radio,2));
+}
+ 
 
 
 }
