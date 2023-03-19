@@ -317,7 +317,49 @@ public static void longitudYArea()
     System.out.println("La longitud es de "+ 2*(Math.PI)*radio+ " y el area es de "+ Math.PI* Math.pow(radio,2));
 }
  
+ /*Ejercicio nº17: Programa que pase una velocidad en Km/h a m/s. La velocidad se lee por teclado.
 
+
+     */
+
+    public static void kilometrosAMillas () {
+        float km;
+        System.out.println("Ingrese la cantidad de kilometros");
+        km = teclado.nextFloat();
+        System.out.println( km + "Kms/h equivale a " + (km* 0.277778) + "ms/s");
+    }
+
+    /*Ejercicio nº18: Programa lea la longitud de los catetos de un triángulo rectángulo y calcule la longitud de la hipotenusa según el teorema de Pitágoras.
+
+     */
+
+    public static void pitagoras ()
+    {
+        float catetoUno, catetoDos;
+        System.out.println("Ingrese el valor del primer cateto");
+        catetoUno = teclado.nextFloat();
+        System.out.println("Ingrese el valor del segundo cateto");
+        catetoDos = teclado.nextFloat();
+        System.out.println("El valor de la hipotenusa es de "+ (float)Math.sqrt((Math.pow(catetoUno,2)+Math.pow(catetoDos,2))));
+    }
+    
+ /*Ejercicio nº19: Programa lea 30 temperaturas correspondientes a un mes y calcule el maximo, el minimo y el promedio.
+     */
+
+    public static void promedioDeTemperaturas ()
+    {
+        float [] temperaturas = {12, 43, 54, 65, 23, 23, 54, 23, 34, 23 ,12 ,34 ,3 ,34 ,34 ,12, 34 ,12, 54, 14, 23, 12, 43, 12, 5, 12, 34, 12, 12, 45};
+        float sumatoria = 0;
+        int length1 = temperaturas.length;
+        for (int i = 0 ; i < 30 ; i++)
+        {
+            sumatoria += temperaturas[i];
+        }
+        System.out.println("El promedio de las temperaturas del mes es de  " +  (sumatoria/(float)(length1)) );
+        
+    }
+    
+    /*Ejercicio 
 
 }
 
