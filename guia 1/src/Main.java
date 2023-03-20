@@ -359,7 +359,109 @@ public static void longitudYArea()
         
     }
     
-    /*Ejercicio 
+    
+    
+    /*ejercicio 20 . Hacer un programa que de 10 numeros aleatorios entre dos numeros ingresados por teclado.*/
+    
+      public static void numerosAleatorios()
+    {
+        int min, max;
+        System.out.println("Ingrese un numero :");
+        min = teclado.nextInt();
+        System.out.println("Ingrese un numero mayor que el anterior");
+        max = teclado.nextInt();
+        Random rand = new Random();
+        if(max > min)
+        {
+            for (int i = 0 ; i<10; i++)
+            {
+                int numeroRandom = rand.nextInt((max-min)+1) + min;
+                System.out.println(numeroRandom);
+            }
+        }
+    }
+    
+    
+    /*
+    Ejercicio nº21:  Crea una aplicación que nos pida un día de la semana y que nos diga si es un día laboral o no. Usa un switch para ello.
+     */
+    
+       public static void diasLaborales()
+    {
+        String dia = new String();
+        System.out.println("Ingrese un dia de la semana");
+        dia = teclado.nextLine();
+        switch (dia)
+        {
+            case "lunes", "martes", "miercoles", "jueves", "viernes" :
+                System.out.println("Es un dia laboral");
+                break;
+            case "sabado", "domingo":
+                System.out.println("No es un dia laboral");
+                break;
+            default:
+            System.out.println("No valido");
+        }
+    }
+
+     /*Ejercicio nº22: Pide por teclado un número entero positivo (debemos controlarlo) y muestra  el número de cifras que tiene.
+    Por ejemplo: si introducimos 1250, nos muestre que tiene 4 cifras. Tendremos que controlar si tiene una o más cifras, al mostrar el mensaje.
+     */
+
+    public static void cantidadCifras()
+    {
+        int numero;
+        System.out.println("Ingrese un numero positivo");
+        numero = teclado.nextInt();
+        if(numero > 0) {
+            System.out.println("El numero ingresado [ " + numero + " ], tiene " + Integer.toString(numero).length() + " digitos");
+        }
+        else
+        {
+            System.out.println("no es correcto");
+        }
+    }
+    
+   /*Ejercicio nº23:  Crea una aplicación llamada CalculadoraPolacaInversaApp, nos pedirá 2 operandos (int) y un signo aritmético (String), según este último se realizará la operación correspondiente. Al final mostrara el resultado en un cuadro de diálogo.
+Los signos aritméticos disponibles son:
++: suma los dos operandos.
+-: resta los operandos.
+*: multiplica los operandos.
+/: divide los operandos, este debe dar un resultado con decimales (double)
+^:  1º operando como base y 2º como exponente.
+%:  módulo, resto de la división entre operando1 y operando2.
+
+     */
+
+    public static void calculadoraPolacaInversaApp ()
+    {
+        int operandoUno, operandoDos;
+        String signo = new String();
+        System.out.println("Ingresa un numero");
+        operandoUno = teclado.nextInt();
+        System.out.println("Ingresa otro numero");
+        operandoDos = teclado.nextInt();
+        System.out.println("ingrese el signo ( + / - / * / / )");
+        signo = teclado.next();
+        switch (signo)
+        {
+            case "+" :
+                System.out.println(" LA SUMA ENTRE [ " + operandoUno+" ] Y [ " +operandoDos+ " ] es [ " + (operandoUno+operandoDos)+ "]");
+                break;
+            case "-" :
+                System.out.println(" LA RESTA ENTRE [ " + operandoUno+" ] Y [ " +operandoDos+ " ] es [" +(operandoUno-operandoDos)+ "]");
+                break;
+            case "*" :
+                System.out.println(" LA MULTIPLICACION ENTRE [ " + operandoUno+" ] Y [ " +operandoDos+ " ] es [" +(operandoUno*operandoDos)+ "]");
+                break;
+            case "/" :
+                System.out.println(" LA RESTA ENTRE [ " + operandoUno+" ] Y [ " +operandoDos+ " ]  es [" +(float)((float)operandoUno/(float)operandoDos) +"]");
+                break;
+            default:
+                System.out.println("incorrecto pelotudito.");
+                break;
+        }
+    }
 
 }
 
